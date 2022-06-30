@@ -1,0 +1,189 @@
+/*  Collapse all modules. 
+     use this in combination with JS to auto-open the module link that was 
+     clicked to navigate to the page */
+
+     #content #context_modules .content,
+     #content #context_modules .collapse_module_link {
+       display: none;
+     }
+     
+     #content #context_modules .expand_module_link {
+       display: inline-block;
+     }
+     
+     
+     /*
+     ------------------
+     highlight submit button
+     works with the custom js script
+     -------------
+     */
+     
+     /************* Expands iframe container to take up almost the whole screen */
+     iframe#preview_frame.expand {
+         width : 100% !important;
+         height : 100%  !important;
+         z-index : 10000 !important;
+         left : 84px !important;
+         top : 0px !important;
+         position : fixed;
+     }
+     
+     /************* Renders the document download link as a button */
+     a.file-upload-submission-info__link.download {
+         background-image: none !important;
+         background: #d7d7d7; /* modify to change button background color */
+         color: #666666; /* modify to change button text color */
+         -moz-border-radius: 5px;
+         -ms-border-radius: 5px;
+         -webkit-border-radius: 5px;
+         border-radius: 5px;
+         text-decoration: none;
+         -moz-transition: 0.2s;
+         -ms-transition: 0.2s;
+         -webkit-transition: 0.2s;
+         transition: 0.2s;
+         position: relative;
+         padding: 12px 12px 12px 40px;
+     }
+     
+     /************* Behavior of the button on hover */
+     a.file-upload-submission-info__link.download:hover {
+         background: #b7b7b7; /* modify to change button background color on hover */
+         /* Shadow styles below cause a shadow to appear beneath the button on hover */
+         -moz-box-shadow: 0px 3px 5px #d7d7d7;
+         -ms-box-shadow: 0px 3px 5px #d7d7d7;
+         -webkit-box-shadow: 0px 3px 5px #d7d7d7;
+         box-shadow: 0px 3px 5px #d7d7d7;
+         -moz-transition: 0.2s;
+         -ms-transition: 0.2s;
+         -webkit-transition: 0.2s;
+         transition: 0.2s;
+     }
+     
+     /************* Adds the download icon at the beginning of the button */
+     a.file-upload-submission-info__link.download:before {
+         background-image: url("https://instructure.github.io/instructure-icons/svg/Line/drop-down_lg.svg");
+         background-size: 30px 30px;
+         content: "";
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: 8px;
+         margin-top: -15px;
+         height: 30px;
+         width: 30px;
+         opacity: 0.4;
+     }
+     
+     /************* Styles for file size info under button */
+     span.file-upload-submission-info__filesize {
+         float: left;
+     }
+     
+     /************* Adds text before file size */
+     span.file-upload-submission-info__filesize:before {
+             content: "Download original - no feedback (";
+             float: left;
+             font-weight: normal;
+     }
+     
+     /************* Adds text after file size */
+     span.file-upload-submission-info__filesize:after {
+             content: ")";
+             float: right;
+             font-weight: normal;
+     }
+     
+     /************* Renders feedback button in line with document download button */
+     .file-upload-submission div.file-upload-submission-attachment {
+         margin-top: -20px;
+     }
+     
+     /************* Turns View Feedback link into a button */
+     a.modal_preview_link.Button--link.feedback-btn {
+         background: #007aff; /* Change to alter background color */
+         color: #ffffff; /* Change to alter text color */
+         float: right;
+         text-align: center;
+         display: block;
+         clear: both;
+         padding: 1em;
+         -moz-border-radius: 5px;
+         -ms-border-radius: 5px;
+         -webkit-border-radius: 5px;
+         border-radius: 5px;
+         text-decoration: none;
+         -moz-transition: 0.2s;
+         -ms-transition: 0.2s;
+         -webkit-transition: 0.2s;
+         transition: 0.2s;
+         width: 75%;
+     }
+     
+     /************* Handles feedback button styles on hover */
+     a.modal_preview_link.Button--link.feedback-btn:hover {
+         background: #0569d6; /* Change to alter background color on hover */
+         font-size: 1em;
+         /* Box shadow styles below make a shadow appear beneath the button on hover */
+         -moz-box-shadow: 0px 3px 5px #d7d7d7;
+         -ms-box-shadow: 0px 3px 5px #d7d7d7;
+         -webkit-box-shadow: 0px 3px 5px #d7d7d7;
+         box-shadow: 0px 3px 5px #d7d7d7;
+         -moz-transition: 0.2s;
+         -ms-transition: 0.2s;
+         -webkit-transition: 0.2s;
+         transition: 0.2s;
+     }
+     
+     /************* Sets base document view height and width */
+     div.ui-dialog-content.ui-widget-content.for-feedback {
+         min-height: 400px !important;
+         width: 100% !important;
+     }
+     
+     /************* Sets base document view content height and width */
+     .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-resizable.for-feedback {
+         min-height: 400px !important;
+         width: 90% !important;
+         top: 50px !important;
+         left: 10px !important;
+     }
+     
+     /************* Fullscreen button is displayed in doc view */
+     div.expand-btn {
+         background-color: #ffffff;
+         background-image: url('https://bytebucket.org/marksgarcia/canvas-docs/raw/3ce4458034dabe3d6b9816acd9cbd6eda69d7220/images/enter-fs.svg');
+         background-repeat: no-repeat;
+         background-size: 30px 30px;
+         background-position: center center;
+         -moz-border-radius: 20px;
+         -ms-border-radius: 20px;
+         -webkit-border-radius: 20px;
+         border-radius: 20px;
+         height: 40px;
+         width: 40px;
+         opacity: 0.5;
+         position: absolute;
+         top: 5px;
+         right: 5px;
+     }
+     
+     div.expand-btn:hover {
+         opacity: 0.9;
+     }
+     
+     /************* Exit fullscreen button displayed in doc view */
+     .ui-widget-overlay.for-feedback div.expand-btn {
+         background-image: url('https://bytebucket.org/marksgarcia/canvas-docs/raw/3ce4458034dabe3d6b9816acd9cbd6eda69d7220/images/exit-fs.svg');
+         left: 90%;
+     }
+     
+     /************* Sets background color of overlay when in fullscreen */
+     .ui-widget-overlay.for-feedback {
+         background: rgba(255, 255, 255, 0.7);
+         -webkit-backdrop-filter: saturate(180%) blur(20px);
+         backdrop-filter: saturate(180%) blur(20px);
+     }
+
+     #login_forgot_password {display:none;}
